@@ -1,13 +1,17 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define Wifi_SSID "happy.waw.pl"
-#define Wifi_Password "KonradMarcinJedrzejczyk1982"
-
-#define MQTT_BROKER "192.168.7.228"
+#if __has_include("config.local.h")
+#include "config.local.h"
+#else
+#define Wifi_SSID "YOUR_WIFI_SSID"
+#define Wifi_Password "YOUR_WIFI_PASSWORD"
+#define MQTT_BROKER "192.168.1.10"
 #define MQTT_PORT 1883
-#define MQTT_USER "Your_MQTT_Username"
-#define MQTT_PASSWORD "Your_MQTT_Password"
+#define MQTT_USER ""
+#define MQTT_PASSWORD ""
+#endif
+
 #define USE_BUILTINLED_FOR_STATUS false
 #define STATUS_LED_PIN 10
 
@@ -17,7 +21,6 @@
 #define DEVICE_NAME "MQTT_Signal_Controller"
 
 #define number_of_PCA9685 3
-// include stdint for fixed-width integer types
 #include <stdint.h>
 const uint8_t adressesPCA9685[number_of_PCA9685] = {0x40};
 
