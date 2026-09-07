@@ -24,8 +24,8 @@
 #include <stdint.h>
 const uint8_t adressesPCA9685[number_of_PCA9685] = {0x40};
 
-#define SDA_PIN 21
-#define SCL_PIN 22
+#define SDA_PIN 4
+#define SCL_PIN 5
 #define I2C_FREQ 100000
 
 #endif
